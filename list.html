@@ -1,0 +1,42 @@
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">WELCOME TO EVENTS!!!</h3>
+    </div>
+        <div class="panel-body form-horizontal"  role="form">
+            <div class="panel-body form-horizontal"  role="form" ng-controller="EventsCtrl">
+                <!--Evnts : {{eventsArr.search.events.event}}-->
+                <h2>Events in London</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Events</th>
+                    <th>Dates</th>
+                    <th>Venue</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="e in eventsArr.search.events.event | orderBy : '-start_time'">
+                    <td>Music</td>
+                    <td>{{e.title}}</td>
+                    <td>{{e.start_time}}</td>
+                    <td>{{e.venue_address}}</td>
+                </tr>
+                <tr ng-repeat="e in eventsHealthArr.search.events.event | orderBy : '-start_time'">
+                    <td>Health</td>
+                    <td>{{e.title}}</td>
+                    <td>{{e.start_time}}</td>
+                    <td>{{e.venue_address}}</td>
+                </tr>
+                <tr ng-repeat="e in eventsFoodArr.search.events.event | orderBy : '-start_time'">
+                    <td>Food</td>
+                    <td>{{e.title}}</td>
+                        <td>{{e.start_time}}</td>
+                    <td>{{e.venue_address}}</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
